@@ -3,7 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="{{ asset('front/style/images/favicon.png') }}">
+  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
+  <meta property="og:app_id" content="{{ $seo['app_id'] }}" />
+  <meta property="og:title" content="{{ $seo['title'] }}" />
+  <meta property="og:type" content="{{ $seo['type'] }}" />
+  <meta property="og:url" content="{{ $seo['url'] }}" />
+  <meta property="og:image" content="{{ $seo['image'] }}" />
+  <meta property="og:description" content="{{ $seo['description'] }}" />
+
   <title>{{ $title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/plugins.css') }}">
@@ -12,19 +20,61 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('front/revolution/css/navigation.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/type/type.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/style.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('front/css/color/red.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('front/desktop.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('front/mobile.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('front/css/color/green.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/font/font3.css') }}">
+  <style>
+    .dark-wrapper {
+        background-color: #24293045 !important;
+    }
+    .nav-link {
+      font-family: 'Recursive', sans-serif !important;
+      text-transform: uppercase !important;
+    }
+    footer .dark-wrapper {
+      background-color: #39b54a !important;
+    }
+
+  </style>
+
+  @if(env('APP_DEBUG') == "false")
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK8GR28WZ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QK8GR28WZ2');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5QTFTF8');</script>
+    <!-- End Google Tag Manager -->
+  @endif
 </head>
-<body>
+<body class="box-layout">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QTFTF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div class="content-wrapper">
     @include('layouts.ly_front_navbar')
 
     @yield('content')
     
     @include('layouts.ly_front_footer')
-    
+    <a  class="whats-app" href="https://wa.me/+6281281073848" target="_blank">
+      <img class="img-wa" src="{{ asset('front/images/product/wa-small.png') }}" alt="logo whatsapp">
+    </a>
   </div>
   <!-- /.content-wrapper -->
   <script src="{{ asset('front/js/jquery.min.js') }}"></script>

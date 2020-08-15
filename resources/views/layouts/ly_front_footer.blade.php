@@ -1,56 +1,44 @@
+
+
 <footer class="dark-wrapper inverse-text">
-    <div class="container inner">
-        <div class="row">
-            <div class="col-md-4 col-lg-4">
-                <div class="widget" style="text-align: center;">
-                    <img src="#" srcset="{{ asset('logo-sas.png') }} 1x" width="40%" alt="" />
-                    <div class="space20"></div>
-                    <p>PT SINERGI ADHIKARYA SEMESTA</p>
-                </div>
-                <!-- /.widget -->
+   <div class="container inner pt-80 pb-50 text-center">
+      <div class="row">
+         <div class="col-md-10 offset-md-1">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="widget">
+                     <h3 class="widget-title">Location</h3>
+                     <address class="mb-0"> Jl. Siaga 1D, Gang Bendungan No.23, RW.5 <br> Pejaten Barat, Kecamatan Pasar Minggu <br>Kota Jakarta Selatan, DKI Jakarta 12510 </address>
+                  </div>
+                  <!-- /.widget -->
+               </div>
+               <!-- /column -->
+               <div class="col-md-4">
+                  <div class="widget">
+                     <h3 class="widget-title">Follow</h3>
+                     <ul class="social social-mute social-s">
+                        <li><a href="{{ $contacts['link_ig'] }}" target="_blank"><i class="jam jam-instagram"></i></a></li>
+                     </ul>
+                  </div>
+                  <!-- /.widget -->
+               </div>
+               <!-- /column -->
+               <div class="col-md-4">
+                  <div class="widget">
+                     <h3 class="widget-title">Contact</h3>
+                     <a href="mailto:{{ $contacts['email'] }}" class="nocolor">{{ $contacts['email'] }}</a> <br /> {{ $contacts['tlp1'] }} <br> {{ $contacts['tlp2'] }}
+                  </div>
+                  <!-- /.widget -->
+               </div>
+               <!-- /column -->
             </div>
-            <!-- /column -->
-            <div class="col-md-4 col-lg-4">
-                <div class="widget">
-                    <h3 class="widget-title">Get in Touch</h3>
-                    <address>{!! nl2br($contact->alamat2) !!}</address>
-                    <a href="mailto:{{ $contact->email1 }}">{{ $contact->email1 }}</a>
-                    <br/><a href="mailto:{{ $contact->email2 }}">{{ $contact->email2 }}</a><br /> {{ $contact->tlp }}
-                </div>
-                <!-- /.widget -->
-            </div>
-            <!-- /column -->
-            <div class="col-md-4 col-lg-4">
-                <div class="widget">
-                    <h3 class="widget-title">Learn More</h3>
-                    <div style="display: inline-flex;">
-                        <ul class="list-unstyled">
-
-                        <li><a href="{{ route('about_front') }}" class="nocolor">About</a></li>
-                        <li><a href="{{ route('service_front') }}" class="nocolor">Service</a></li>
-                        <li><a href="{{ route('client_front') }}" class="nocolor">Client</a></li>
-
-                        </ul>
-                        <ul class="list-unstyled" style="padding-left: 20%;">
-
-                        <li><a href="{{ route('career_front') }}" class="nocolor">Career</a></li>
-                        <li><a href="{{ route('gallery_front') }}" class="nocolor">Gallery</a></li>
-                        <li><a href="{{ route('contact_front') }}" class="nocolor">Contact</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <ul class="social social-mute social-s ml-auto">
-                    <li><a href="javascript:;" style="font-size: 32px;" onclick="openPages('{{ $contact->twitter }}')"><i class="jam jam-twitter-circle"></i></a></li>
-                    <li><a href="javascript:;" style="font-size: 32px;" onclick="openPages('{{ $contact->facebook }}')"><i class="jam jam-facebook-circle"></i></a></li>
-                    <li><a href="javascript:;" style="font-size: 32px;" onclick="openPages('{{ $contact->instagram }}')"><i class="jam jam-instagram"></i></a></li>
-                    <li><a href="javascript:;" style="font-size: 32px;" onclick="openPages('{{ $contact->linkedin }}')"><i class="jam jam-linkedin-circle"></i></a></li>
-                </ul>
-            <!-- /.widget -->
-            </div>
-            <!-- /column -->
-        </div>
-        <!--/.row -->
-    </div>
-    <!-- /.container -->
+            <!-- /.row -->
+         </div>
+         <!-- /column -->
+      </div>
+      <!-- /.row -->
+      <div class="space30"></div>
+      <p class="text-center">© 2020 Tukang Sticker. All rights reserved.</p>
+   </div>
+   <!-- /.container -->
 </footer>

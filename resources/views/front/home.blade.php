@@ -1,236 +1,227 @@
 @extends('layouts.ly_front')
 
 @section('content')
-@include('front.slider')
 
-<!-- /.wrapper -->
-    <div class="wrapper light-wrapper">
-      <div class="container inner">
-        <h2 class="title-color color-gray text-center">Tentang</h2>
-        <h3 class="display-3 text-center">PT Sinergi Adhikarya Semesta adalah perusahaan yang bergerak di bidang jasa penyediaan tenaga kerja yang bekerja sama dengan perusahaan-perusahaan besar di bidang industri perbankan, asuransi, ekspedisi dan e-commerce.</h3>
-        <div class="space40"></div>
-      </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.wrapper -->
-    <div class="wrapper white-wrapper">
-    <div class="container inner">
-        <h3 class="display-3 text-center">Keuntungan bekerja sama dengan PT SAS</h3>
-        <div class="space40"></div>
-        <div class="row gutter-50">
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row justify-content-center">
-              <div>
-                <div class="icon icon-blob icon-blob-rose color-rose mr-25"> <i class="icofont-people"></i> </div>
-              </div>
-              <div>
-                <h5>Sumber daya manusia yang berkualitas</h5>
-                <p>Tenaga kerja yang kami sediakan adalah tenaga kerja yang kami seleksi melalui tahapan-tahapan psikotest, interview dan test kemampuan kerja.</p>
-              </div>
-            </div>
-          </div>
-          <!--/column -->
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row justify-content-center">
-              <div>
-                <div class="icon icon-blob icon-blob-blue color-blue mr-25"> <i class="icofont-hand-power"></i> </div>
-              </div>
-              <div>
-                <h5>Tenaga kerja yang terampil dan terlatih</h5>
-                <p>Tenaga kerja yang kami berikan pelatihan secara intens dan professional sesuai kebutuhan customer.</p>
-              </div>
-            </div>
-          </div>
-          <!--/column -->
-          <div class="space20 d-none d-md-block d-lg-none"></div>
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row justify-content-center">
-              <div>
-                <div class="icon icon-blob icon-blob-green color-green mr-25"> <i class="icofont-users-alt-2"></i> </div>
-              </div>
-              <div>
-                <h5>Menyediakan petugas Back Up / Pengganti</h5>
-                <p>Ketersediaan petugas pengganti terlatih jika ada karyawan yang outsourcing berhalangan hadir.</p>
-              </div>
-            </div>
-          </div>
-          <!--/column -->
-          <div class="space20 d-none d-lg-block"></div>
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row justify-content-center">
-              <div>
-                <div class="icon icon-blob icon-blob-purple color-purple mr-25"> <i class="icofont-chart-radar-graph"></i> </div>
-              </div>
-              <div>
-                <h5>Memiliki data base pelamar sendiri</h5>
-                <p>Kami memiliki data base pelamar dengan jumlah kurang lebih dari 1.000 pelamar up-to-date dan terus bertambah setiap bulan nya rata-rata 300-500 pelamar.</p>
-              </div>
-            </div>
-          </div>
-          <!--/column -->
-          <div class="space20 d-none d-md-block d-lg-none"></div>
-          <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row justify-content-center">
-              <div>
-                <div class="icon icon-blob icon-blob-orange color-orange mr-25"> <i class="icofont-company"></i> </div>
-              </div>
-              <div>
-                <h5>Bekerja sama dengan perusahaan penyedia informasi lowongan pekerjaan</h5>
-                <p>Dalam pengadaan karyawan jika persediaan kurang, kami bisa sangat cepat dalam mencari karyawan karena kami kerja sama dengan beberapa situs lowongan kerja.</p>
-              </div>
-            </div>
-          </div>
-          <div class="space20 d-none d-md-block d-lg-none"></div>
-          <div class="col-md-6 col-lg-4">
-              <div class="d-flex flex-row justify-content-center">
-                  <div>
-                      <div class="icon icon-blob icon-blob-rose color-rose mr-25"> <i class="icofont-headphone-alt"></i> </div>
-                  </div>
-                  <div>
-                      <h5>24/7 Support</h5>
-                      <p>PT Sinergi Adhikarya Semesta menyediakan layanan SAS Care yang bisa anda hubungi dan siap melayani anda selama 24 jam.</p>
-                  </div>
-              </div>
-          </div>
-          
-      <!-- /.grid-view -->
-   </div>
-    </div>
 
-    <div class="wrapper white-wrapper">
-      <div class="container inner">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div id="dial1">
-              <ul class="dial">
-
-                <li>
-                  <div class="dial-item active" data-cyrcleBox="cf1-1"><span class="icon icon-blob icon-blob-blue color-blue"><i class="icofont-handshake-deal"></i><span class="step bg-blue">1</span></span></div>
-                  <div class="dial-item-info" id="cf1-1">
-                    <div class="dial-item-info-inner">
-                      <h3>1. Sales</h3>
-                      <p>Penawaran dengan harga yang relatif sesuai dengan perusahaan Anda.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="dial-item" data-cyrcleBox="cf1-2"><span class="icon icon-blob icon-blob-orange color-orange"><i class="icofont-chart-arrows-axis"></i><span class="step bg-orange">2</span></span></div>
-                  <div class="dial-item-info" id="cf1-2">
-                    <div class="dial-item-info-inner">
-                      <h3>2. Analysis</h3>
-                      <p>Menganalisa setiap layanan yang di butuhkan oleh perusahaan berdasarkan approval antara kedua belah pihak.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="dial-item" data-cyrcleBox="cf1-3"><span class="icon icon-blob icon-blob-yellow color-yellow"><i class="icofont-rotation"></i><span class="step bg-yellow">3</span></span></div>
-                  <div class="dial-item-info" id="cf1-3">
-                    <div class="dial-item-info-inner">
-                      <h3>3. Proses</h3>
-                      <p>Setelah melalui tahap 1 & 2 maka kami akan melakukan proses recruitment.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="dial-item" data-cyrcleBox="cf1-4"><span class="icon icon-blob icon-blob-purple color-purple"><i class="icofont-users-alt-5"></i><span class="step bg-purple">4</span></span></div>
-                  <div class="dial-item-info" id="cf1-4">
-                    <div class="dial-item-info-inner">
-                      <h3>4. Training</h3>
-                      <p>Para calon kandidat diberikan pembelajaran dan pembekalan sebelum diserahkan ke Perusahaan.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="dial-item" data-cyrcleBox="cf1-5"><span class="icon icon-blob icon-blob-pink color-pink"><i class="icofont-map-pins"></i><span class="step bg-pink">5</span></span></div>
-                  <div class="dial-item-info" id="cf1-5">
-                    <div class="dial-item-info-inner">
-                      <h3>5. Penempatan</h3>
-                      <p>Kami memberikan kandidat terbaik untuk ditempatkan di perusahaan Customer.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="dial-item" data-cyrcleBox="cf1-6"><span class="icon icon-blob icon-blob-green color-green"><i class="icofont-handshake-deal"></i><span class="step bg-green">6</span></span></div>
-                  <div class="dial-item-info" id="cf1-6">
-                    <div class="dial-item-info-inner">
-                      <h3>6. Finallys</h3>
-                      <p>Penandatangan perjanjian kesepakatan antara kedua belah pihak dan dilanjutkan dengan pembayaran invoice.</p>
-                    </div>
-                  </div>
-                </li>
-                
-              </ul>
-            </div>
-          </div>
-          <!--/column -->
-          <div class="col-lg-6 pl-60 pl-sm-15">
-            <h2 class="title-color color-gray">Our Process</h2>
-            <h3 class="display-3">Berikut adalah 6 langkah kerja <br class="d-none d-lg-block" />untuk mengatur bisnis kami.</h3>
-            <div class="space20"></div>
-            <p>Kami memberikan proses bisnis yang sangat mudah untuk mengatur permintaan tenaga kerja untuk perusahaan anda.</p>
-            <p class="mb-0"> PT Sinergi adhikarya semesta akan memberikan kandidat terbaik yang sudah lulus seleksi dan sesuai kebutuhan perusahaan anda, memiliki data base pelamar sendiri yang up to date dan bertambah setiap bulannya, kami juga menyediakan petugas back up / pengganti jika ada karyawan yang tidak masuk kerja, Permintaan petugas back up / pengganti bisa diakses melalui layanan SAS CARE yang melayani selama 24 jam atau untuk informasi lainnya.</p>
-          </div>
-          <!--/column -->
+<div class="wrapper light-wrapper">
+   <div class="container-fluid p-0">
+      <div class="rev_slider_wrapper autowidth-container dark-spinner">
+        <div id="slider13" class="rev_slider fullwidthbanner light-gallery-wrapper" data-version="5.4.7">
+          <ul>
+            @foreach($slider as $key => $val)
+            <li data-transition="fade" data-thumb=""><img src="{{ asset('front/images/'.$val['path']) }}" data-bgcolor="#e6eaf1" alt="" />
+              <div class="tp-caption font-weight-600 color-dark" 
+	               data-x="['left','left','left','left']" 
+	               data-y="middle" 
+	               data-hoffset="['650','550','400','30']" 
+	               data-voffset="['-80','-80','-90','-120']" 
+	               data-fontsize="['44','44','42','42']" 
+	               data-lineheight="['54','54','52','52']" 
+	               data-width="['450','450','350','340']" 
+	               data-textAlign="['left','left','left','left']" 
+	               data-whitespace="['normal','normal','normal','normal']" 
+	               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;"> 
+	          </div>
+            </li>
+               @endforeach
+          </ul>
+          <div class="tp-bannertimer tp-bottom"></div>
         </div>
-        <!--/.row -->
+        <!-- /.rev_slider -->
+        <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white-wrapper" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
+            <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg></div>
       </div>
-      <!-- /.container -->
-      <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
-          <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg></div>
-    </div>
-    <!-- /.wrapper -->
-    <div class="wrapper light-wrapper">
-      <div class="container inner">
-        <h2 class="title-color color-gray text-center">Our Service</h2>
-        <div class="space40"></div>
-        <div class="grid grid-view boxed">
-          <div class="tiles text-center light-gallery-wrapper">
+   </div>
+   <!-- /.container-fluid -->
+   <div class="container inner">
+      <div class="row align-items-center">
+         <div class="col-lg-5 order-lg-2 pl-60 pl-md-15">
+            <h2 class="section-title">Our Services</h2>
+            <p class="lead">I'd like to give you a unique photography experience, capture your products with excellent composition and lighting skills.</p>
+            <div class="space10"></div>
+            <p class="mb-0">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui.</p>
+         </div>
+         <!--/column -->
+         <div class="space20 d-md-none"></div>
+         <div class="space50 d-none d-md-block d-lg-none"></div>
+         <div class="col-lg-7 text-center grid grid-view boxed">
             <div class="row isotope">
-              @foreach($service as $key => $val)
-              <div class="item grid-sizer col-md-4 col-lg-4 application">
-                <div class="box bg-white shadow p-30">
-                  <figure class="main overlay overlay2 rounded mb-30"><a href="{{ $val['based_64'] }}" class="lightbox"> <img src="{{ $val['based_64'] }}" alt="" /></a></figure>
-                  <div class="post-content">
-                    <h4 class="post-title mb-10"><a href="{{ route('service_front') }}">{{ $val['name'] }}</a></h4>
+               <div class="col-md-6 item grid-sizer">
+                  <div class="box bg-white shadow p-30">
+                     <figure class="main overlay overlay1 rounded mb-30">
+                        <a href="#"><img src="{{ asset('front/images/product/24-7-01.png') }}" alt="" /></a>
+                        <figcaption>
+                           <h5 class="from-top mb-0 text-uppercase">See Gallery</h5>
+                        </figcaption>
+                     </figure>
+                     <div class="post-content">
+                        <h5 class="text-uppercase mb-0">Digital Printing 24/7</h5>
+                     </div>
+                     <!-- /.post-content -->
                   </div>
-                  <!-- /.post-content -->
-                </div>
-                <!-- /.box -->
-              </div>
-              @endforeach
-              <div class="space80"></div>
+                  <!-- /.box -->
+                  <div class="space30"></div>
+                  <div class="box bg-white shadow p-30">
+                     <figure class="main overlay overlay1 rounded mb-30">
+                        <a href="#"><img src="{{ asset('front/images/product/wrapping/5.jpg') }}" alt="" /></a>
+                        <figcaption>
+                           <h5 class="from-top mb-0 text-uppercase">See Gallery</h5>
+                        </figcaption>
+                     </figure>
+                     <div class="post-content">
+                        <h5 class="text-uppercase mb-0">Wrapping</h5>
+                     </div>
+                     <!-- /.post-content -->
+                  </div>
+                  <!-- /.box -->
+               </div>
+               <!--/column -->
+               <div class="col-md-6 item grid-sizer">
+                  <div class="space30 d-none d-md-block"></div>
+                  <div class="box bg-white shadow p-30">
+                     <figure class="main overlay overlay1 rounded mb-30">
+                        <a href="#"><img src="{{ asset('front/images/product/kantor/2.png') }}" alt="" /></a>
+                        <figcaption>
+                           <h5 class="from-top mb-0 text-uppercase">See Gallery</h5>
+                        </figcaption>
+                     </figure>
+                     <div class="post-content">
+                        <h5 class="text-uppercase mb-0">Design Visual</h5>
+                     </div>
+                     <!-- /.post-content -->
+                  </div>
+                  <!-- /.box -->
+                  <div class="space30"></div>
+                  <div class="box bg-white shadow p-30">
+                     <figure class="main overlay overlay1 rounded mb-30">
+                        <a href="#"><img src="{{ asset('front/images/product/PRODUCT/btn2.png') }}" alt="" /></a>
+                        <figcaption>
+                           <h5 class="from-top mb-0 text-uppercase">See Gallery</h5>
+                        </figcaption>
+                     </figure>
+                     <div class="post-content">
+                        <h5 class="text-uppercase mb-0">Interior Design</h5>
+                     </div>
+                     <!-- /.post-content -->
+                  </div>
+                  <!-- /.box -->
+               </div>
+               <!--/column -->
+            </div>
+            <!--/.row -->
+         </div>
+         <!--/column -->
+      </div>
+      <!--/.row -->
+   </div>
+   <!-- /.container -->
+</div>
+
+<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="{{ asset('front/images/product/landscape/5.jpg') }}">
+    <div class="container inner pt-150 pb-150">
+    <h2 class="display-1 mb-0 text-center">I take photographs with <br class="d-none d-lg-block" />creativity, concept & passion</h2>
+    </div>
+    <!-- /.container -->
+</div>
+
+
+
+<div class="wrapper light-wrapper">
+   <div class="container inner">
+      <h2 class="section-title text-center">My Selected Shots</h2>
+      <p class="lead text-center">Photography is my passion and I love to turn ideas into beautiful things.</p>
+      <div class="space40"></div>
+      <div class="grid grid-view">
+         <div class="isotope-filter text-center">
+            <ul>
+               <li><a class="button active" data-filter="*">All</a></li>
+               @foreach($label as $key => $val)
+               <li><a class="button" data-filter=".{{ $val }}">{{ $val }}</a></li>
+               @endforeach
+            </ul>
+         </div>
+         <div class="clearfix"></div>
+         <div class="tiles tiles-m light-gallery-wrapper">
+            <div class="row isotope">
+
+            @foreach($label_images as $key => $val)
+
+               <div class="item grid-sizer col-md-6 col-lg-4 {{ $val['label'] }}">
+                  <figure class="overlay overlay1 rounded" style="border: 1px solid #f7f7f7;">
+                     <a href="{{ asset('front/images/'.$val['path']) }}" class="lightbox"> <img src="{{ asset('front/images/'.$val['path']) }}" alt="" /></a>
+                     <figcaption>
+                        <h5 class="from-top mb-0">{{ $val['title'] }}</h5>
+                     </figcaption>
+                  </figure>
+               </div>
+            @endforeach
+               
+               <!-- /.item -->
             </div>
             <!-- /.row -->
-          </div>
-          <!-- /.tiles -->
-        </div>
+         </div>
+         <!-- /.tiles -->
       </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.wrapper -->
-    <div class="wrapper">
-      <div class="container inner">
-        <h2 class="title-color color-gray text-center">Our Client</h2>
-        
+      <!-- /.grid -->
+      <div class="space20"></div>
+      <div class="text-center"><a href="#" class="btn btn-l">See All Shots</a></div>
+   </div>
+   <!-- /.container -->
+</div>
+
+<div class="wrapper white-wrapper">
+    <div class="container inner">
+        <div class="text-center">
+            <h2 class="title-bg bg-default color-default">Happy Customers</h2>
+        </div>
+        <div class="space10"></div>
+        <h3 class="display-3 text-center">Customer satisfaction is our major goal. <br class="d-none d-lg-block" />See what our customers are saying about us.</h3>
+        <div class="space40"></div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 pr-60 pr-md-15">
+                <figure><img src="#" srcset="{{ asset('front/images/concept/concept16.png') }} 1x, {{ asset('front/images/concept/concept16@2x.png') }} 2x" alt="" /></figure>
+            </div>
+            <!--/column -->
+            <div class="space20 d-md-none"></div>
+            <div class="space50 d-none d-md-block d-lg-none"></div>
+            <div class="col-lg-5">
+                <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30">
+                  @foreach($testimoni as $key => $val)
+                    <div class="item">
+                        <blockquote class="icon icon-left larger text-left">
+                            <p>"{{ $val['quote'] }}"</p>
+                            <div class="blockquote-details">
+                                <div class="info p-0">
+                                    <h6 class="mb-0">{{ $val['name'] }}</h6>
+                                    <span class="meta mb-0">{{ $val['title'] }}</span>
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                  @endforeach
+                </div>
+                <!-- /.owl-carousel -->
+            </div>
+            <!--/column -->
+        </div>
+        <!--/.row -->
         <div class="space80"></div>
         <div class="carousel owl-carousel clients" data-margin="30" data-loop="true" data-dots="false" data-autoplay="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "5"}, "1140":{"items": "6"}}'>
+            
+            @foreach($client as $key  => $val)
+            
+            <div class="item pl-15 pr-15"><img src="{{ asset('front/images/'.$val['path']) }}" alt="{{ $val['title'] }}" /></div>
 
-        @if(count($client) > 0)
-            @foreach($client as $key => $val)
-              <div class="item pl-15 pr-15"><img src="{{ $val['based_64'] }}" alt="" /></div>
             @endforeach
-        @else
-        <h2 class="title-color color-gray text-center">Client not Available.</h2>
-        @endif
-          
         </div>
-        
-      </div>
-      <!-- /.container -->
+        <!-- /.owl-carousel -->
     </div>
+    <!-- /.container -->
+</div>
+
+
+
+
 @endsection
