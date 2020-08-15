@@ -33,6 +33,8 @@ class FrontController extends Controller
         $data['service'] = OurService::where('isActive', 1)->get()->toArray();
         $data['slider'] = Slider::where('isActive', 1)->get()->toArray();
         $data['client'] = OurClient::where('isActive', 1)->get()->toArray();
+        $data['labels'] = Label::where('isActive', 1)->get()->toArray();
+        $data['gallery'] = Gallery::with('labels')->where('isActive', 1)->get()->toArray();
         $data['contact'] = $this->footer;
         $data['seo'] = [
             "description" => "Tukang Sticker adalah perusahaan yang bergerak di bidang Jasa Design, Visual, Cetak, dan Pemasangan berbagai jenis material promosi. Kami memberikan pelayanan yang terpercaya dengan hasil kualitas yang sangat baik dan di dukung dengan mesin - mesin kelas Premium.",
@@ -49,131 +51,8 @@ class FrontController extends Controller
             "tlp1" => "021-7919 7853",
             "tlp2" => "0812 8107 3848"
         ];
-        $data['slider'] = [
-            [
-                "title" => "Design Landscape 1",
-                "path" => "product/landscape/2.jpg"
-            ],
-            [
-                "title" => "Design Landscape 2",
-                "path" => "product/landscape/4.jpg"
-            ],
-            [
-                "title" => "Design Landscape 3",
-                "path" => "product/landscape/3.jpg"
-            ],
-            [
-                "title" => "Design Landscape 4",
-                "path" => "product/landscape/bank_btn1.jpg"
-            ],
-            [
-                "title" => "Design Landscape 5",
-                "path" => "product/landscape/bank_btn2.jpg"
-            ],
-            [
-                "title" => "Design Landscape 5",
-                "path" => "product/landscape/elf_branding1.jpg"
-            ],
-            [
-                "title" => "Design Landscape 5",
-                "path" => "product/landscape/elf_branding2.jpg"
-            ],
-        ];
-        $data['label'] = ['Office', 'Mushola', 'Outdoor', 'Wrapping', 'Mesin'];
-        $data['label_images'] = [
-            [
-                "label" => "Office",
-                "path" => 'product/kantor/5.png',
-                "title" => 'Office 1'
-            ],
-            [
-                "label" => "Office",
-                "path" => 'product/kantor/6.png',
-                "title" => 'Office 2'
-            ],
-            [
-                "label" => "Office",
-                "path" => 'product/kantor/7.png',
-                "title" => 'Office 3'
-            ],            
-            [
-                "label" => "Mushola",
-                "path" => 'product/mushola/3.png',
-                "title" => 'Mushola'
-            ],            
-            [
-                "label" => "Mushola",
-                "path" => 'product/mushola/4.png',
-                "title" => 'Mushola'
-            ],            
-            [
-                "label" => "Mushola",
-                "path" => 'product/mushola/5.png',
-                "title" => 'Mushola'
-            ],            
-            [
-                "label" => "Outdoor",
-                "path" => 'product/PRODUCT/sensor2.png',
-                "title" => 'Outdoor 3'
-            ],            
-            [
-                "label" => "Outdoor",
-                "path" => 'product/PRODUCT/sensor3.png',
-                "title" => 'Outdoor 3'
-            ],            
-            [
-                "label" => "Outdoor",
-                "path" => 'product/PRODUCT/sensor4.png',
-                "title" => 'Outdoor 3'
-            ],            
-            [
-                "label" => "Wrapping",
-                "path" => 'product/wrapping/1.jpg',
-                "title" => 'Wrapping 1'
-            ],            
-            [
-                "label" => "Wrapping",
-                "path" => 'product/wrapping/2.jpg',
-                "title" => 'Wrapping 2'
-            ],            
-            [
-                "label" => "Wrapping",
-                "path" => 'product/wrapping/3.jpg',
-                "title" => 'Wrapping 3'
-            ],            
-            [
-                "label" => "Wrapping",
-                "path" => 'product/wrapping/4.jpg',
-                "title" => 'Wrapping 4'
-            ],            
-            [
-                "label" => "Wrapping",
-                "path" => 'product/wrapping/5.jpg',
-                "title" => 'Wrapping 5'
-            ],            
-            [
-                "label" => "Wrapping",
-                "path" => 'product/wrapping/6.jpg',
-                "title" => 'Wrapping 6'
-            ],            
-            [
-                "label" => "Mesin",
-                "path" => 'product/mesin1.jpg',
-                "title" => 'Mesin 1'
-            ],            
-            [
-                "label" => "Mesin",
-                "path" => 'product/mesin2.jpg',
-                "title" => 'Mesin 2'
-            ],            
-        ];
-        $data['client'] = [
-            ['title' => 'Pertamina', 'path' => "product/client/pertamina.png"],
-            ['title' => 'Unilever Indonesia', 'path' => "product/client/unilever.png"],
-            ['title' => "Wall's Ice Cream", 'path' => "product/client/walls.png"],
-            ['title' => 'Fabelio', 'path' => "product/client/fabelio.png"],
-            ['title' => 'Bank BTN', 'path' => "product/client/bank-btn.png"],
-        ];
+        // dd($data);
+        
         $data['testimoni'] = [
             [
                 "quote" => "Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi cras mattis consectetur purus posuere.",

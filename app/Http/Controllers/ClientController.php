@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\OurClient;
+use App\Models\ContactUs;
 
 class ClientController extends Controller
 {
@@ -17,11 +18,20 @@ class ClientController extends Controller
         "msg" => "Terjadi kesalahan pada system."
     ];
 
+    private $title = "Tukang-Sticker";
+    private $footer = [];
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->footer = ContactUs::find(1);
+    }
+
     public function index()
     {
         $data['bredcrum']   = $this->bredcrum;
         $data['list']       = OurClient::with(['user'])->get()->toArray();
-        
+        $data['footer']     = $this->footer;
         // dd($data);
         return view('admin.client', $data);
     }

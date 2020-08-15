@@ -33,6 +33,14 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-registered"></i></span>
+                            </div>
+                            <input type="text" class="form-control" name="title" placeholder="Title Content." value="{{ $about->title }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-link"></i></span>
                             </div>
                             <input type="text" class="form-control" name="whatsapp_url" placeholder="WhatsApp link url." value="{{ $about->whatsapp_url }}">
@@ -148,7 +156,7 @@
                             {{ $about->alamat2 }}
                         </textarea>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class=" col-md-12 form-group">
                             <label for="exampleInputEmail1">Images Contact us</label>
                             <div class="preview-images">
@@ -291,7 +299,7 @@
                             <input type="file" id="tmpbased_64_career" name="tmpbased_64_career" accept="image/*" style="display: none;">
                             <input type="hidden" name="based_64_career" value="{{ $about->based_64_career }}">
                         </div>
-                    </div>
+                    </div> --}}
                     
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i> Simpan</button>

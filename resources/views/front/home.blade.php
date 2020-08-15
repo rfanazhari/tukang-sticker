@@ -9,7 +9,7 @@
         <div id="slider13" class="rev_slider fullwidthbanner light-gallery-wrapper" data-version="5.4.7">
           <ul>
             @foreach($slider as $key => $val)
-            <li data-transition="fade" data-thumb=""><img src="{{ asset('front/images/'.$val['path']) }}" data-bgcolor="#e6eaf1" alt="" />
+            <li data-transition="fade" data-thumb=""><img src="{{ $val['based_64'] }}" data-bgcolor="#e6eaf1" alt="{{ $val['caption'] }}" />
               <div class="tp-caption font-weight-600 color-dark" 
 	               data-x="['left','left','left','left']" 
 	               data-y="middle" 
@@ -39,9 +39,13 @@
       <div class="row align-items-center">
          <div class="col-lg-5 order-lg-2 pl-60 pl-md-15">
             <h2 class="section-title">Our Services</h2>
-            <p class="lead">I'd like to give you a unique photography experience, capture your products with excellent composition and lighting skills.</p>
+            <p class="lead">Tukang Sticker adalah perusahaan yang bergerak di bidang Jasa Design, Visual, Cetak, dan Pemasangan berbagai jenis material
+               promosi.</p>
             <div class="space10"></div>
-            <p class="mb-0">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui.</p>
+            <p class="mb-0">Kami memberikan pelayanan yang terpercaya dengan hasil kualitas yang sangat baik dan di dukung dengan mesin - mesin
+               kelas Premium. Dan dikerjakan oleh para tenaga ahli yang kompeten dibidangnya.</p>
+            <div class="space5"></div>
+            <p class="mb-0">Dengan mesin <b>HP Latex 375</b> dan di dukung dengan bahan yang premium. Memberikan kepuasan untuk hasil cetak yang sangat memuaskan.</p>
          </div>
          <!--/column -->
          <div class="space20 d-md-none"></div>
@@ -121,7 +125,7 @@
 
 <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="{{ asset('front/images/product/landscape/5.jpg') }}">
     <div class="container inner pt-150 pb-150">
-    <h2 class="display-1 mb-0 text-center">I take photographs with <br class="d-none d-lg-block" />creativity, concept & passion</h2>
+    <h2 class="display-1 mb-0 text-center">One stop  <br class="d-none d-lg-block" />Design, Printing and Cutting Services </h2>
     </div>
     <!-- /.container -->
 </div>
@@ -130,15 +134,15 @@
 
 <div class="wrapper light-wrapper">
    <div class="container inner">
-      <h2 class="section-title text-center">My Selected Shots</h2>
-      <p class="lead text-center">Photography is my passion and I love to turn ideas into beautiful things.</p>
+      <h2 class="section-title text-center">Our Selected Shots</h2>
+      {{-- <p class="lead text-center">Photography is my passion and I love to turn ideas into beautiful things.</p> --}}
       <div class="space40"></div>
       <div class="grid grid-view">
          <div class="isotope-filter text-center">
             <ul>
                <li><a class="button active" data-filter="*">All</a></li>
-               @foreach($label as $key => $val)
-               <li><a class="button" data-filter=".{{ $val }}">{{ $val }}</a></li>
+               @foreach($labels as $key => $val)
+               <li><a class="button" data-filter=".{{ $val['permalink'] }}">{{ $val['name'] }}</a></li>
                @endforeach
             </ul>
          </div>
@@ -146,13 +150,13 @@
          <div class="tiles tiles-m light-gallery-wrapper">
             <div class="row isotope">
 
-            @foreach($label_images as $key => $val)
+            @foreach($gallery as $key => $val)
 
-               <div class="item grid-sizer col-md-6 col-lg-4 {{ $val['label'] }}">
+               <div class="item grid-sizer col-md-6 col-lg-4 {{ $val['labels']['permalink'] }}">
                   <figure class="overlay overlay1 rounded" style="border: 1px solid #f7f7f7;">
-                     <a href="{{ asset('front/images/'.$val['path']) }}" class="lightbox"> <img src="{{ asset('front/images/'.$val['path']) }}" alt="" /></a>
+                     <a href="{{ $val['based_64'] }}" class="lightbox"> <img src="{{ $val['based_64'] }}" alt="" /></a>
                      <figcaption>
-                        <h5 class="from-top mb-0">{{ $val['title'] }}</h5>
+                        <h5 class="from-top mb-0">{{ $val['alt'] }}</h5>
                      </figcaption>
                   </figure>
                </div>
@@ -212,7 +216,7 @@
             
             @foreach($client as $key  => $val)
             
-            <div class="item pl-15 pr-15"><img src="{{ asset('front/images/'.$val['path']) }}" alt="{{ $val['title'] }}" /></div>
+            <div class="item pl-15 pr-15"><img src="{{ $val['based_64'] }}" alt="{{ $val['alt'] }}" /></div>
 
             @endforeach
         </div>

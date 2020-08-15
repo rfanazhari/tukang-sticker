@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Label;
 use App\Models\Gallery;
+use App\Models\ContactUs;
 
 class GalleryController extends Controller
 {
@@ -24,11 +25,20 @@ class GalleryController extends Controller
         "msg" => "Terjadi kesalahan pada system."
     ];
 
+    private $title = "Tukang-Sticker";
+    private $footer = [];
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->footer = ContactUs::find(1);
+    }
+
     public function lable()
     {
         $data['bredcrum']   = $this->bredcrum;
         $data['list']       = Label::with(['user'])->get()->toArray();
-        
+        $data['footer']     = $this->footer;
         return view('admin.lable', $data);
     }
 
@@ -95,6 +105,7 @@ class GalleryController extends Controller
         $data['bredcrum'] = $this->bredcrum;
         $data['label']    = Label::where('isActive', '=', 1)->get()->toArray();
         $data['gallery']    = Gallery::with(['labels', 'user'])->get()->toArray();
+        $data['footer']     = $this->footer;
         
         return view('admin.images', $data);
     }

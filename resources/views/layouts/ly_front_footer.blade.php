@@ -8,7 +8,7 @@
                <div class="col-md-4">
                   <div class="widget">
                      <h3 class="widget-title">Location</h3>
-                     <address class="mb-0"> Jl. Siaga 1D, Gang Bendungan No.23, RW.5 <br> Pejaten Barat, Kecamatan Pasar Minggu <br>Kota Jakarta Selatan, DKI Jakarta 12510 </address>
+                     <address class="mb-0"> {!! nl2br($contact->alamat1) !!} </address>
                   </div>
                   <!-- /.widget -->
                </div>
@@ -17,7 +17,7 @@
                   <div class="widget">
                      <h3 class="widget-title">Follow</h3>
                      <ul class="social social-mute social-s">
-                        <li><a href="{{ $contacts['link_ig'] }}" target="_blank"><i class="jam jam-instagram"></i></a></li>
+                        <li><a href="{{ $contact->instagram }}" target="_blank"><i class="jam jam-instagram"></i></a></li>
                      </ul>
                   </div>
                   <!-- /.widget -->
@@ -26,7 +26,7 @@
                <div class="col-md-4">
                   <div class="widget">
                      <h3 class="widget-title">Contact</h3>
-                     <a href="mailto:{{ $contacts['email'] }}" class="nocolor">{{ $contacts['email'] }}</a> <br /> {{ $contacts['tlp1'] }} <br> {{ $contacts['tlp2'] }}
+                     <a href="mailto:{{ $contact->email1 }}" class="nocolor">{{ $contact->email1 }}</a> <br /><a href="mailto:{{ $contact->email2 }}" class="nocolor">{{ $contact->email2 }}</a> <br /> {{ $contact->tlp }}
                   </div>
                   <!-- /.widget -->
                </div>

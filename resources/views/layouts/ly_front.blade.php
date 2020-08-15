@@ -72,7 +72,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     @yield('content')
     
     @include('layouts.ly_front_footer')
-    <a  class="whats-app" href="https://wa.me/+6281281073848" target="_blank">
+    <a  class="whats-app" href="{{ $contact->whatsapp_url }}" target="_blank">
       <img class="img-wa" src="{{ asset('front/images/product/wa-small.png') }}" alt="logo whatsapp">
     </a>
   </div>

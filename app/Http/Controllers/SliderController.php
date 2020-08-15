@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Slider;
+use App\Models\ContactUs;
 
 class SliderController extends Controller
 {
@@ -17,10 +18,20 @@ class SliderController extends Controller
         "msg" => "Terjadi kesalahan pada system."
     ];
 
+    private $title = "Tukang-Sticker";
+    private $footer = [];
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->footer = ContactUs::find(1);
+    }
+
     public function index()
     {
         $data['bredcrum']   = $this->bredcrum;
         $data['list']       = Slider::with(['user'])->get()->toArray();
+        $data['footer']     = $this->footer;
         
         return view('admin.slider', $data);
     }

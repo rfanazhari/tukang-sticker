@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ContactUs;
 
 class HomeController extends Controller
 {
@@ -11,9 +12,19 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    private $title = "Tukang-Sticker";
+    private $footer = [];
+    private $status = [
+        "code" => 500,
+        "type" => "danger",
+        "msg" => "Terjadi kesalahan pada system."
+    ];
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->footer = ContactUs::find(1);
     }
 
     /**
@@ -76,6 +87,7 @@ class HomeController extends Controller
             $i++;
         }
         $data['quotes'] = isset($quotes[$nums]) ? $quotes[$nums] : $quotes[0];
+        $data['footer'] = $this->footer;
         return view('admin.home', $data);
     }
 }

@@ -21,6 +21,7 @@ class AboutController extends Controller
     {
         $data['bredcrum']   = $this->bredcrum;
         $data['about']       = ContactUs::find(1);
+        $data['footer']       = ContactUs::find(1);
         // dd($data);
         return view('admin.about', $data);
     }
@@ -28,6 +29,7 @@ class AboutController extends Controller
     
     public function post(Request $request)
     {
+        $data['title'] = $request['title'];
         $data['whatsapp_url'] = $request['whatsapp_url'];
         $data['tlp'] = $request['tlp'];
         $data['email1'] = $request['email1'];
@@ -38,14 +40,14 @@ class AboutController extends Controller
         $data['twitter'] = $request['twitter'];
         $data['instagram'] = $request['instagram'];
         $data['linkedin'] = $request['linkedin'];
-        $data['based_64_contact_us'] = $request['based_64_contact_us'];
-        $data['based_64_about_us1'] = $request['based_64_about_us1'];
-        $data['based_64_about_us2'] = $request['based_64_about_us2'];
-        $data['based_64_about_us3'] = $request['based_64_about_us3'];
-        $data['based_64_about_us4'] = $request['based_64_about_us4'];
-        $data['based_64_service'] = $request['based_64_service'];
-        $data['based_64_client'] = $request['based_64_client'];
-        $data['based_64_career'] = $request['based_64_career'];
+        // $data['based_64_contact_us'] = $request['based_64_contact_us'];
+        // $data['based_64_about_us1'] = $request['based_64_about_us1'];
+        // $data['based_64_about_us2'] = $request['based_64_about_us2'];
+        // $data['based_64_about_us3'] = $request['based_64_about_us3'];
+        // $data['based_64_about_us4'] = $request['based_64_about_us4'];
+        // $data['based_64_service'] = $request['based_64_service'];
+        // $data['based_64_client'] = $request['based_64_client'];
+        // $data['based_64_career'] = $request['based_64_career'];
         $data['tag_about'] = $request['tag_about'];
         $data['tag_service'] = $request['tag_service'];
         $data['tag_client'] = $request['tag_client'];
@@ -65,14 +67,14 @@ class AboutController extends Controller
                     'twitter' => $data['twitter'],
                     'instagram' => $data['instagram'],
                     'linkedin' => $data['linkedin'],
-                    'based_64_contact_us' => $data['based_64_contact_us'],
-                    'based_64_about_us1' => $data['based_64_about_us1'],
-                    'based_64_about_us2' => $data['based_64_about_us2'],
-                    'based_64_about_us3' => $data['based_64_about_us3'],
-                    'based_64_about_us4' => $data['based_64_about_us4'],
-                    'based_64_service' => $data['based_64_service'],
-                    'based_64_client' => $data['based_64_client'],
-                    'based_64_career' => $data['based_64_career'],
+                    // 'based_64_contact_us' => $data['based_64_contact_us'],
+                    // 'based_64_about_us1' => $data['based_64_about_us1'],
+                    // 'based_64_about_us2' => $data['based_64_about_us2'],
+                    // 'based_64_about_us3' => $data['based_64_about_us3'],
+                    // 'based_64_about_us4' => $data['based_64_about_us4'],
+                    // 'based_64_service' => $data['based_64_service'],
+                    // 'based_64_client' => $data['based_64_client'],
+                    // 'based_64_career' => $data['based_64_career'],
                     'tag_about' => $data['tag_about'],
                     'tag_service' => $data['tag_service'],
                     'tag_client' => $data['tag_client'],
