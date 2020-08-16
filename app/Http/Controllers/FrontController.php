@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Slider;
-use App\Models\OurService;
 use App\Models\OurClient;
 use App\Models\Carrer;
 use App\Models\Gallery;
@@ -30,7 +29,7 @@ class FrontController extends Controller
 
     public function index() {
         
-        $data['service'] = OurService::where('isActive', 1)->get()->toArray();
+        // $data['service'] = OurService::where('isActive', 1)->get()->toArray();
         $data['slider'] = Slider::where('isActive', 1)->get()->toArray();
         $data['client'] = OurClient::where('isActive', 1)->get()->toArray();
         $data['labels'] = Label::where('isActive', 1)->get()->toArray();
@@ -50,6 +49,40 @@ class FrontController extends Controller
             "email" => "info@tukang-sticker.com",
             "tlp1" => "021-7919 7853",
             "tlp2" => "0812 8107 3848"
+        ];
+        $data['cat_service']= [
+            [
+                'name' => 'Outdoor & Event Banners (Flexy Jerman)',
+                'permalink' => 'outdoor-and-event-banners-flexy-jerman'
+            ],
+            [
+                'name' => 'Posters (ArtCarton Paper & Vinyl Sticker)',
+                'permalink' => 'posters-artcarton-paper-and-vinyl-sticker'
+            ],
+            [
+                'name' => 'Vehicle Graphics / Decals (Vinyls & Transparent sticker, Blackout sticker)',
+                'permalink' => 'vehicle-graphics-or-decals-vinyls-and-transparent-sticker-blackout-sticker'
+            ],
+            [
+                'name' => 'Neon Box & Billboard (Frontlit & Backlit)',
+                'permalink' => 'neon-box-and-billboard-frontlit-and-backlit'
+            ],
+            [
+                'name' => 'Textiles (Polyester & Canvas)',
+                'permalink' => 'textiles-polyester-and-canvas'
+            ],
+            [
+                'name' => 'Decoration (Custom Interior Wallpaper, Wall Cover)',
+                'permalink' => 'decoration-custom-interior-wallpaper-wall-cover'
+            ],
+            [
+                'name' => 'T-Shirt (Polyflex Cutting Press)',
+                'permalink' => 't-shirt-polyflex-cutting-press'
+            ],
+            [
+                'name' => 'Sablon Press',
+                'permalink' => 'sablon-press'
+            ],
         ];
         // dd($data);
         

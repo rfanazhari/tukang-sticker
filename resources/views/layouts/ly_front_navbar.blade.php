@@ -32,14 +32,9 @@
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#!">Product</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ route('front') }}">Outdoor & Event Banners (Flexy Jerman)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">Posters (ArtCarton Paper & Vinyl Sticker)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">Vehicle Graphics / Decals (Vinyls & Transparent sticker, Blackout sticker)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">Neon Box & Billboard (Frontlit & Backlit)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">Textiles (Polyester & Canvas)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">Decoration (Custom Interior Wallpaper, Wall Cover)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">T-Shirt (Polyflex Cutting Press)</a></li>
-                <li><a class="dropdown-item" href="{{ route('front') }}">Sablon Press</a></li>
+              @foreach($cat_service as $key => $val)
+                <li><a class="dropdown-item" href="{{ url('product/'.$val['permalink']) }}">{{ $val['name'] }}</a></li>
+               @endforeach
               </ul>
             </li>
 

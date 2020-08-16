@@ -23,6 +23,8 @@ Route::group([ 'prefix' => 'front'], function() {
     Route::post('/contact/post', 'FrontController@contact_post')->name('contact_front_post');
 });
 
+Route::get('/product/{product}', 'ProductController@index');
+
 Auth::routes(['register' => true]);
 
 Route::get('/login', 'FrontController@index')->name('front_login');
