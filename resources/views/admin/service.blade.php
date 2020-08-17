@@ -106,7 +106,7 @@ function previewImages(img) {
 function toolstips(id) {
     let content = document.getElementById('content-'+id);
     var dialog = bootbox.dialog({
-        size: 'medium',
+        size: 'large',
         message: '<p>'+content.innerHTML+'</p>',
         onEscape: function() {
             
@@ -160,6 +160,7 @@ function Dialog(data) {
     var images = '';
     var description = '';
     var linkUrl = 'http://corporate.sinergiadhikarya.co.id/';
+    var labels = "";
     if(data.type == 'edit') {
         restData = data.res;
         linkUrl = restData.url != '' ? restData.url : 'http://corporate.sinergiadhikarya.co.id/';
@@ -168,6 +169,7 @@ function Dialog(data) {
         images = restData.based_64;
         isActive = restData.isActive;
         description = restData.description;
+        labels = restData.permalink;
         isEdit = "";
 
         if(restData.isActive == 0) {
@@ -178,15 +180,16 @@ function Dialog(data) {
     }
     var dialog = bootbox.dialog({
         title: data.Title+' Our Service ',
-        size: 'medium',
+        size: 'large',
         message: '<form class="form-commentar">' +
+            '<input type="hidden" class="form-control" name="imagesId" value="'+imagesId+'">' +
                 '<div class="form-group has-float-label">' +
-                    '<input type="text" class="form-control" name="imagesAlt" placeholder="Nama Service." value="'+imagesAlt+'">' +
-                    '<input type="hidden" class="form-control" name="imagesId" value="'+imagesId+'">' +
-                '</div>' +
-                '<div class="form-group has-float-label">' +
-                    '<label for="exampleInputEmail1">Link URL</label>' +
-                    '<input type="text" class="form-control" name="linkUrl" placeholder="Link URL." value="'+linkUrl+'">' +
+                    '<select class="form-control select2" id="label" name="label" style="width: 100%;">' +
+                        '<option value="">Pilih Label</option>' +
+                        @foreach($cat_service as $key => $val)
+                            '<option value="{{ $val['permalink'] }}">{{ $val['name'] }}</option>' +
+                        @endforeach
+                    '</select>' +
                 '</div>' +
                 '<div class="row"><div class=" col-md-12"><div class="preview-images">' +
                     '<img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22782%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20782%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_172f306647a%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_172f306647a%22%3E%3Crect%20width%3D%22782%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22291.25%22%20y%3D%22142.4%22%3E782x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" class="rounded float-left img-thumbnail previewImages" alt="...">' +
@@ -224,6 +227,7 @@ function Dialog(data) {
         $('.textarea').summernote();
         if(data.type == "edit") {
             $('.previewImages').attr("src", images);
+            document.getElementById('label').value = labels;
         }
         $('.select2').select2({
             theme: 'bootstrap4'
@@ -241,6 +245,7 @@ function Dialog(data) {
             isActive =  $('[name="isActive"]').val();
             linkUrl =  $('[name="linkUrl"]').val();
             description =  $('[name="description"]').val();
+            labels = $('[name="label"]').val();
             
             if(data.type == 'edit') {
                 isActive = $('[name="isActive"]:checked').val();
@@ -257,6 +262,7 @@ function Dialog(data) {
                     "linkUrl" : linkUrl,
                     "isActive" : isActive,
                     "description" : description,
+                    "label": labels,
                     "_token": "{{ csrf_token() }}"
                 }, function(data) {
                     if(data.status == 200) {

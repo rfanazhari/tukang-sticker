@@ -2,13 +2,26 @@
 
 @section('content')
 
-<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="{{ $contact->based_64_contact_us }}">
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="{{ asset('front/images/product/rsz_10724.jpg') }}">
     <div class="container inner text-center">
-        <div class="space90"></div>
+        <div class="space60"></div>
         <h1 class="page-title">Contact Us</h1>
     </div>
     <!-- /.container -->
 </div>
+
+<div class="wrapper light-wrapper">
+    <div class="image-block-wrapper">
+       <div class="image-block col-lg-12 p-0">
+          <div class="google-map map-full">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.922856741985!2d106.84331211502213!3d-6.273873995458987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3eecbdd8e49%3A0x782b34bee55381ea!2sTukang%20Sticker.com!5e0!3m2!1sid!2sid!4v1597572178386!5m2!1sid!2sid" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
+          </div>
+          <!--/.google-map -->
+       </div>
+       <!--/.image-block -->
+    </div>
+    <!--/.image-block-wrapper -->
+ </div> 
 
 <div class="wrapper light-wrapper">
     <div class="container inner">
@@ -74,20 +87,11 @@
             <div class="col-lg-4 offset-lg-1">
                 <div class="d-flex flex-row">
                     <div>
-                        <div class="icon color-default fs-34 mr-25"> <i class="icofont-building"></i> </div>
+                        <div class="icon color-default fs-34 mr-25"> <i class="icofont-location-pin"></i> </div>
                     </div>
                     <div>
                         <h6 class="mb-5">Main Address</h6>
                         <address>{!! nl2br($contact->alamat1) !!}</address>
-                    </div>
-                </div>
-                <div class="d-flex flex-row">
-                    <div>
-                        <div class="icon color-default fs-34 mr-25"> <i class="icofont-location-pin"></i> </div>
-                    </div>
-                    <div>
-                        <h6 class="mb-5">Address</h6>
-                        <address>{!! nl2br($contact->alamat2) !!}</address>
                     </div>
                 </div>
                 <div class="d-flex flex-row">
@@ -101,7 +105,7 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div>
-                        <div class="icon color-default fs-34 mr-25"> <i class="icofont-mail-box"></i> </div>
+                        <div class="icon color-default fs-34 mr-25"> <i class="icofont-send-mail"></i> </div>
                     </div>
                     <div>
                         <h6 class="mb-5">E-mail</h6>

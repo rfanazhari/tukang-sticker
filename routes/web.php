@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'FrontController@index')->name('front');
+Route::get('/sitemap', 'FrontController@sitemap')->name('sitemap');
 
 Route::group([ 'prefix' => 'front'], function() {
     Route::get('/career', 'FrontController@career')->name('career_front');

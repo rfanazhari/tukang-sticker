@@ -15,11 +15,45 @@ class ServiceController extends Controller
     ];
     private $status = [
         "code" => 500,
-        "msg" => "Terjadi kesalahan pada system."
+        "msg" => "Terjadi kesalahan pada system.."
     ];
 
     private $title = "Tukang-Sticker";
     private $footer = [];
+    private $cat_service = [
+        [
+            'name' => 'Outdoor & Event Banners (Flexy Jerman)',
+            'permalink' => 'outdoor-and-event-banners-flexy-jerman'
+        ],
+        [
+            'name' => 'Posters (ArtCarton Paper & Vinyl Sticker)',
+            'permalink' => 'posters-artcarton-paper-and-vinyl-sticker'
+        ],
+        [
+            'name' => 'Vehicle Graphics / Decals (Vinyls & Transparent sticker, Blackout sticker)',
+            'permalink' => 'vehicle-graphics-or-decals-vinyls-and-transparent-sticker-blackout-sticker'
+        ],
+        [
+            'name' => 'Neon Box & Billboard (Frontlit & Backlit)',
+            'permalink' => 'neon-box-and-billboard-frontlit-and-backlit'
+        ],
+        [
+            'name' => 'Textiles (Polyester & Canvas)',
+            'permalink' => 'textiles-polyester-and-canvas'
+        ],
+        [
+            'name' => 'Decoration (Custom Interior Wallpaper, Wall Cover)',
+            'permalink' => 'decoration-custom-interior-wallpaper-wall-cover'
+        ],
+        [
+            'name' => 'T-Shirt (Polyflex Cutting Press)',
+            'permalink' => 't-shirt-polyflex-cutting-press'
+        ],
+        [
+            'name' => 'Sablon Press',
+            'permalink' => 'sablon-press'
+        ],
+    ];
 
     public function __construct()
     {
@@ -32,40 +66,7 @@ class ServiceController extends Controller
         $data['bredcrum']   = $this->bredcrum;
         $data['list']       = OurService::with(['user'])->get()->toArray();
         $data['footer']     = $this->footer;
-        $data['cat_service']= [
-            [
-                'name' => 'Outdoor & Event Banners (Flexy Jerman)',
-                'permalink' => 'outdoor-and-event-banners-flexy-jerman'
-            ],
-            [
-                'name' => 'Posters (ArtCarton Paper & Vinyl Sticker)',
-                'permalink' => 'posters-artcarton-paper-and-vinyl-sticker'
-            ],
-            [
-                'name' => 'Vehicle Graphics / Decals (Vinyls & Transparent sticker, Blackout sticker)',
-                'permalink' => 'vehicle-graphics-or-decals-vinyls-and-transparent-sticker-blackout-sticker'
-            ],
-            [
-                'name' => 'Neon Box & Billboard (Frontlit & Backlit)',
-                'permalink' => 'neon-box-and-billboard-frontlit-and-backlit'
-            ],
-            [
-                'name' => 'Textiles (Polyester & Canvas)',
-                'permalink' => 'textiles-polyester-and-canvas'
-            ],
-            [
-                'name' => 'Decoration (Custom Interior Wallpaper, Wall Cover)',
-                'permalink' => 'decoration-custom-interior-wallpaper-wall-cover'
-            ],
-            [
-                'name' => 'T-Shirt (Polyflex Cutting Press)',
-                'permalink' => 't-shirt-polyflex-cutting-press'
-            ],
-            [
-                'name' => 'Sablon Press',
-                'permalink' => 'sablon-press'
-            ],
-        ];
+        $data['cat_service']= $this->cat_service;
         
         // dd($data);
         return view('admin.service', $data);
@@ -80,7 +81,20 @@ class ServiceController extends Controller
         $data['isActive'] = $request['isActive'];
         $data['linkUrl'] = $request['linkUrl'];
         $data['permalink'] = str_replace(' ', '-', strtolower($data['imagesAlt']));
+        $data['label'] = $request['label'];
+        
+        if(!empty($data['label'])) {
+            for ($i=0; $i < count($this->cat_service); $i++) { 
+                if(isset($this->cat_service[$i]['permalink'])  && $this->cat_service[$i]['permalink'] == $data['label']) {
+                    $data['label'] = $this->cat_service[$i];
+                }
+            }
 
+            $data['imagesAlt'] = $data['label']['name'];
+            $data['permalink'] = $data['label']['permalink'];
+            $data['linkUrl'] = $data['label']['permalink'];
+        }
+        
         if(!empty($data['imagesId']) && empty($data['images'])) {
             $img = OurService::find($data['imagesId']);
             if($img) {
