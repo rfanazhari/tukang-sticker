@@ -11,6 +11,37 @@
   <meta property="og:url" content="{{ $seo['url'] }}" />
   <meta property="og:image" content="{{ $seo['image'] }}" />
   <meta property="og:description" content="{{ $seo['description'] }}" />
+  <meta property="og:keywords" content="{{ $seo['keywords'] }}" />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="copyright"content="Tukang Sticker.com">
+  <meta name="keywords" content="{{ $seo['keywords'] }}"/>
+  <meta name="description" content="{{ $seo['description'] }}"/>
+  <meta name="subject" content="{{ $seo['title'] }}">
+  <meta name="Classification" content="Business">
+  <meta name="author" content="tukang-sticker, info@tukang-sticker.com">
+  <meta name="url" content="https://tukang-sticker.com">
+
+  {{-- for apple --}}
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  {{-- <meta name="viewport" content="width = 320, initial-scale = 2.3, user-scalable = no"> --}}
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  {{-- <meta name= "viewport" content = "width = 320, initial-scale = 2.3, user-scalable = no"> --}}
+  {{-- <meta name= "viewport" content = "width = device-width">
+  <meta name = "viewport" content = "initial-scale = 1.0">
+  <meta name = "viewport" content = "initial-scale = 2.3, user-scalable = no"> --}}
+  <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}" />
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon.ico') }}" />
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon.ico') }}" />
+  <link rel="apple-touch-startup-image" href="{{ asset('favicon.ico') }}">
+
+  <link rel="apple-touch-icon" type="image/png" href="{{ asset('favicon.ico') }}" />
 
   <title>{{ $title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.min.css') }}">

@@ -1,4 +1,16 @@
-
+<div class="wrapper footer-dark-wrapper">
+   <div class="container">
+     <div class="overflow-bottom">
+       <div class="box shadow p-130 image-wrapper bg-full bg-image rounded d-md-flex align-items-md-center justify-content-md-between" data-image-src="{{ asset('front/images/product/support_hp.png') }}">
+         <h3 class="display-3 mb-0"></h3>
+       </div>
+       <!--/.box -->
+     </div>
+     <!--/.overflow -->
+   </div>
+   <!--/.container -->
+ </div>
+ <!--/.wrapper -->
 
 <footer class="dark-wrapper inverse-text">
    <div class="container inner pt-80 pb-50 text-center">
