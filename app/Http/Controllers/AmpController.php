@@ -13,7 +13,7 @@ use App\Models\Subscribe;
 use Carbon\Carbon;
 use Session;
 
-class FrontController extends Controller
+class AmpController extends Controller
 {
     private $title = "Tukang-Sticker";
     private $footer = [];
@@ -116,7 +116,7 @@ class FrontController extends Controller
             }
         } else {
             $data['title'] = $this->title;
-            return view('front.home', $data);
+            return view('amp.home', $data);
         }
     }
 

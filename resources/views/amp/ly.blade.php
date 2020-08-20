@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html amp lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico">
-  
+  <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <!-- <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Tukang Sticker",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "{{ asset('ts-logo.png') }}"
+        ]
+      }
+    </script>
+  <link rel="icon" href="{{ asset('favicon.ico') }}">
   <title>{{ $title }}</title>
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "url": "https://tukang-sticker.com",
-      "logo": "https://tukang-sticker.com/logo-ts.png"
-    }
-  </script>
-
-  <meta name="robots" content="index,follow" />
+  <!-- <meta name="robots" content="index,follow" />
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" /> -->
   <link rel="canonical" href="{{ $seo['url'] }}" />
   
   <!-- Chrome, Firefox OS and Opera -->
@@ -50,10 +53,10 @@
   <meta content="yes" name="apple-touch-fullscreen" />
   <meta name="format-detection" content="telephone=no">
   
-  <link rel="apple-touch-startup-image" href="favicon.ico">
+  <link rel="apple-touch-startup-image" href="{{ asset('favicon.ico') }}">
 
-  <link rel="apple-touch-icon" href="favicon.ico" />
-  <link rel="android-touch-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}" />
+  <link rel="android-touch-icon" href="{{ asset('favicon.ico') }}" />
   <meta name="google-site-verification" content="Tzq6nswyqjqWuP6_Ud2N68gxGvnU0oTCGQbv3pq3NBc" />
 
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.min.css') }}">
