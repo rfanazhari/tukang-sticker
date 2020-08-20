@@ -45,6 +45,10 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('contact_front') }}">About Us</a>
               <!--/.dropdown-menu -->
             </li>
+
+            <li class="nav-item"><a class="nav-link" href="{{ route('home_order') }}"><i class="icofont-ticket"></i> Order</a>
+              <!--/.dropdown-menu -->
+            </li>
             
          </ul>
          <!-- /.navbar-nav -->
