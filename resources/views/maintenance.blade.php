@@ -187,7 +187,7 @@
         </div>
         <!-- /.row -->
         <div class="space40"></div>
-        <p style="font-size: 14px;">© 2020 Tukang-Sticker. All rights reserved.</p>
+        <p style="font-size: 14px;">© 2020 Tukang Sticker.com. All rights reserved.</p>
         <ul class="social social-mute social-s">
           <li><a href="mailto:tukangsticker.jkt@gmail.com"><i class="jam jam-envelope"></i></a></li>
           <li><a href="https://www.instagram.com/_tukangsticker_/"><i class="jam jam-instagram"></i></a></li>

@@ -12,8 +12,10 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "name": "Tukang Sticker.com",
       "url": "https://tukang-sticker.com",
-      "logo": "https://tukang-sticker.com/logo-ts.png"
+      "logo": "https://tukang-sticker.com/logo-ts.png",
+      "sameAs" : ["https://www.instagram.com/_tukangsticker_"]
     }
   </script>
 
@@ -70,6 +72,7 @@
   <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/font/font3.css') }}">
+  @yield('css')
   <style>
     .dark-wrapper {
         background-color: #24293045 !important;

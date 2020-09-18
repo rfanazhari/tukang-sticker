@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactUs;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
-    private $title = "Tukang-Sticker";
+    private $title = "Tukang Sticker.com";
     private $footer = [];
     private $status = [
         "code" => 500,
@@ -69,7 +70,7 @@ class OrderController extends Controller
         $data['seo']            = $this->seo;
         $data['title']          = $this->title;
         $data['cat_service']    = $this->cat_service;
-        $data['contact']         = $this->footer;
+        $data['contact']        = $this->footer;
 
         return view('front.order.index', $data);
     }
@@ -78,7 +79,8 @@ class OrderController extends Controller
         $data['seo']            = $this->seo;
         $data['title']          = $this->title;
         $data['cat_service']    = $this->cat_service;
-        $data['contact']         = $this->footer;
+        $data['contact']        = $this->footer;
+        $data['products']       = Product::get()->toArray();
 
         return view('front.order.order_form', $data);
     }

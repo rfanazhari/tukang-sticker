@@ -178,37 +178,41 @@
 <div class="wrapper white-wrapper">
     <div class="container inner">
         <div class="text-center">
-            <h2 class="title-bg bg-default color-default">Happy Customers</h2>
+            <h2 class="title-bg bg-default color-default">Our Projects</h2>
         </div>
         <div class="space10"></div>
-        <h3 class="display-3 text-center">Customer satisfaction is our major goal. <br class="d-none d-lg-block" />See what our customers are saying about us.</h3>
+        <h3 class="display-3 text-center">Check out some of our awesome projects <br class="d-none d-lg-block" />with creative ideas and great design.</h3>
         <div class="space40"></div>
-        <div class="row align-items-center">
-            <div class="col-lg-6 pr-60 pr-md-15">
-                <figure><img src="#" srcset="{{ asset('front/images/concept/concept16.png') }} 1x, {{ asset('front/images/concept/concept16@2x.png') }} 2x" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="space20 d-md-none"></div>
-            <div class="space50 d-none d-md-block d-lg-none"></div>
-            <div class="col-lg-5">
-                <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30">
-                  @foreach($testimoni as $key => $val)
-                    <div class="item">
-                        <blockquote class="icon icon-left larger text-left">
-                            <p>"{{ $val['quote'] }}"</p>
-                            <div class="blockquote-details">
-                                <div class="info p-0">
-                                    <h6 class="mb-0">{{ $val['name'] }}</h6>
-                                    <span class="meta mb-0">{{ $val['title'] }}</span>
-                                </div>
-                            </div>
-                        </blockquote>
-                    </div>
-                  @endforeach
+        <div class="grid grid-view">
+          <div class="tiles text-center light-gallery-wrapper">
+            <div class="row isotope">
+              <div class="item item-detailed grid-sizer col-md-12 col-lg-6">
+                <figure class="overlay overlay2 rounded mb-20"><a href="style/images/art/fp12.jpg" class="lightbox"> <img src="style/images/art/fp12.jpg" alt="" /></a></figure>
+                <div class="post-content">
+                  <h2 class="post-title mb-10"><a href="portfolio-post4.html">Nullam Mollis</a></h2>
+                  <div class="meta mb-0">Application</div>
                 </div>
-                <!-- /.owl-carousel -->
+                <!-- /.post-content -->
+              </div>
+              <!-- /.item -->
+              <div class="item item-detailed grid-sizer col-md-12 col-lg-6">
+                <figure class="overlay overlay2 rounded mb-20"><a href="style/images/art/fp15.jpg" class="lightbox"> <img src="style/images/art/fp15.jpg" alt="" /></a></figure>
+                <div class="post-content">
+                  <h2 class="post-title mb-10"><a href="portfolio-post5.html">Euismod Risus</a></h2>
+                  <div class="meta mb-0">Video, Application</div>
+                </div>
+                <!-- /.post-content -->
+              </div>
+              <!-- /.item -->
             </div>
-            <!--/column -->
+            <!-- /.row -->
+          </div>
+          <!-- /.tiles -->
+        </div>
+        <!-- /.grid -->
+        <div class="space20"></div>
+        <div class="text-center">
+          <a href="#" class="btn btn-l btn-default mb-0">Start a Project</a>
         </div>
         <!--/.row -->
         <div class="space80"></div>

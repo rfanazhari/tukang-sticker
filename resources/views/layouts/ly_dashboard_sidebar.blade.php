@@ -54,6 +54,29 @@
                         </li>
                     </ul>
                 </li> --}}
+                <li class="nav-item has-treeview @if(in_array(Route::current()->getName(), ['transaction', 'customer'])) menu-open @endif">
+                    <a href="#" class="nav-link @if(in_array(Route::current()->getName(), ['transaction', 'customer'])) active @endif">
+                      <i class="nav-icon fas fa-cash-register"></i>
+                        <p>
+                          Transaction
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('customer') }}" class="nav-link @if(Route::current()->getName() == 'customer') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Customer</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('transaction') }}" class="nav-link @if(Route::current()->getName() == 'transaction') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Transaction</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item has-treeview @if(in_array(Route::current()->getName(), ['gallery', 'lable'])) menu-open @endif">
                     <a href="#" class="nav-link @if(in_array(Route::current()->getName(), ['gallery', 'lable'])) active @endif">
                       <i class="nav-icon fas fa-images"></i>

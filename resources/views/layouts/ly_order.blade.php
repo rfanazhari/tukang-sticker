@@ -2,8 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+  <link rel="icon" href="{{ asset('favicon.ico') }}">
+  
+  <title>{{ $title }}</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tukang Sticker.com",
+      "url": "https://tukang-sticker.com",
+      "logo": "https://tukang-sticker.com/logo-ts.png",
+      "sameAs" : ["https://www.instagram.com/_tukangsticker_"]
+    }
+  </script>
+
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="{{ $seo['url'] }}" />
+  
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#229954">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#229954">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#229954">
 
   <meta property="og:app_id" content="{{ $seo['app_id'] }}" />
   <meta property="og:title" content="{{ $seo['title'] }}" />
@@ -13,37 +40,24 @@
   <meta property="og:description" content="{{ $seo['description'] }}" />
   <meta property="og:keywords" content="{{ $seo['keywords'] }}" />
 
-  <meta name="robots" content="index,follow" />
-  <meta name="copyright"content="Tukang Sticker.com">
+  <meta name="copyright" content="Tukang Sticker.com">
   <meta name="keywords" content="{{ $seo['keywords'] }}"/>
   <meta name="description" content="{{ $seo['description'] }}"/>
   <meta name="subject" content="{{ $seo['title'] }}">
   <meta name="Classification" content="Business">
   <meta name="author" content="tukang-sticker, info@tukang-sticker.com">
-  <meta name="url" content="https://tukang-sticker.com">
-
+  <meta name="url" content="{{ $seo['url'] }}">
+  
   {{-- for apple --}}
-  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta content="yes" name="apple-touch-fullscreen" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no">
-  {{-- <meta name="viewport" content="width = 320, initial-scale = 2.3, user-scalable = no"> --}}
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no">
-  {{-- <meta name= "viewport" content = "width = 320, initial-scale = 2.3, user-scalable = no"> --}}
-  {{-- <meta name= "viewport" content = "width = device-width">
-  <meta name = "viewport" content = "initial-scale = 1.0">
-  <meta name = "viewport" content = "initial-scale = 2.3, user-scalable = no"> --}}
-  <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}" />
-  <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon.ico') }}" />
-  <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon.ico') }}" />
+  
   <link rel="apple-touch-startup-image" href="{{ asset('favicon.ico') }}">
 
-  <link rel="apple-touch-icon" type="image/png" href="{{ asset('favicon.ico') }}" />
+  <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}" />
+  <link rel="android-touch-icon" href="{{ asset('favicon.ico') }}" />
+  <meta name="google-site-verification" content="Tzq6nswyqjqWuP6_Ud2N68gxGvnU0oTCGQbv3pq3NBc" />
 
-  <title>{{ $title }}</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/plugins.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/revolution/css/settings.css') }}">
@@ -58,6 +72,7 @@
   <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ asset('front/css/font/font3.css') }}">
+  @yield('css')
   <style>
     .dark-wrapper {
         background-color: #24293045 !important;
@@ -133,5 +148,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         $('#modal-01').modal('show');
     }
   </script>
+  @yield('js')
 </body>
 </html>

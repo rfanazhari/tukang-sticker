@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin {{ $footer->title }}</title>
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-
+  <meta name="robots" content="nofollow" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -71,6 +71,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootbox/bootbox.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/parsley/parsley.min.js') }}"></script>
 <script>
 function onlyAlert(msg, closes) {
     bootbox.alert(msg);

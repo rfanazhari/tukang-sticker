@@ -15,7 +15,7 @@ use Session;
 
 class AmpController extends Controller
 {
-    private $title = "Tukang-Sticker";
+    private $title = "Tukang Sticker.com";
     private $footer = [];
     private $status = [
         "code" => 500,

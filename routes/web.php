@@ -39,6 +39,11 @@ Route::get('/admins', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/admins', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::group(['prefix' => 'another'], function() {
+    Route::get('/invoice-print', 'AnotherController@printInvoice')->name('print_invoice');
+    Route::get('/email-generate', 'AnotherController@generateEmail')->name('email_generate');
+});
+
 
 Route::group([ 'prefix' => 'admin', 'middleware' => ['auth'] ], function() {
     Route::get('/', 'HomeController@index')->name('home');
@@ -61,6 +66,13 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth'] ], function() {
     Route::get('/about', 'AboutController@index')->name('about');
     Route::post('/about/post', 'AboutController@post')->name('about_post');
     Route::get('/subscribe', 'SubscribeController@index')->name('subscribe');
+
+    Route::get('/order/customer', 'CustomerController@customer')->name('customer');
+    Route::post('/order/customer/post', 'CustomerController@customer_post')->name('customer_post');
+    Route::get('/order/transaction', 'TransactionController@transaction')->name('transaction');
+    Route::get('/order/transaction/create/{type}', 'TransactionController@create')->name('transaction_create');
+    Route::post('/order/transaction/post/{type}', 'TransactionController@post')->name('transaction_post');
+    Route::post('/order/transaction/show-details', 'TransactionController@details')->name('transaction_details');
 });
 
 

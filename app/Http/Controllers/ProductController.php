@@ -9,7 +9,7 @@ use App\Models\ContactUs;
 class ProductController extends Controller
 {
     //
-    private $title = "Tukang-Sticker";
+    private $title = "Tukang Sticker.com";
     private $cat_service = [
         [
             'name' => 'Outdoor & Event Banners (Flexy Jerman)',

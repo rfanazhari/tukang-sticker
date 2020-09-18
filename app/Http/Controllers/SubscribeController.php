@@ -15,7 +15,7 @@ class SubscribeController extends Controller
         'title' => 'Subscribe',
         'bredcrum' => []
     ];
-    private $title = "Tukang-Sticker";
+    private $title = "Tukang Sticker.com";
     private $footer = [];
 
     public function __construct()

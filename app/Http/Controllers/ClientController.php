@@ -18,7 +18,7 @@ class ClientController extends Controller
         "msg" => "Terjadi kesalahan pada system."
     ];
 
-    private $title = "Tukang-Sticker";
+    private $title = "Tukang Sticker.com";
     private $footer = [];
 
     public function __construct()
