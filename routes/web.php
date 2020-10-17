@@ -84,11 +84,15 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth'] ], function() {
     
     Route::get('/project/wallpaper', 'ProjectController@wallpaper')->name('wallpaper');
     Route::post('/project/wallpaper/post', 'ProjectController@post_wallpaper')->name('wallpaper_post');
+    
+    Route::get('/project/design', 'ProjectController@design')->name('design');
+    Route::post('/project/design/post', 'ProjectController@post_design')->name('design_post');
 });
 
 Route::group(['prefix' => 'projects'], function() {
     Route::get('/wallpapers', 'OurProjectController@wallpaper')->name('front_wallpaper');
     Route::get('/designs', 'OurProjectController@design')->name('front_design');
+    Route::get('/details', 'OurProjectController@details')->name('details');
 });
 
 

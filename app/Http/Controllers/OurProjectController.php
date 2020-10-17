@@ -80,4 +80,12 @@ class OurProjectController extends Controller
 
         return view('front.project.design', $data);
     }
+    public function details(Request $request) {
+        $data['title'] = "Detail - ".$this->title;
+        $data['contact'] = $this->footer;
+        $data['seo'] = $this->seo;
+        $data['cat_service']= $this->cat_service;
+
+        return view('front.project.detail', $data);
+    }
 }

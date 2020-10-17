@@ -8,6 +8,7 @@ use App\Models\ContactUs;
 use App\Models\User;
 use App\Models\Template;
 use App\Models\Label;
+use App\Models\Design;
 use App\Models\Projects;
 use App\Models\Wallpaper;
 use Carbon\Carbon;
@@ -136,6 +137,18 @@ class ProjectController extends Controller
         
         return view("admin.project.wallpaper", $data);
     }
+    
+    public function design() {
+        $this->bredcrum['title'] = "Design";
+        $data['bredcrum']   = $this->bredcrum;
+        $data['footer']     = $this->footer;
+        $data['customer']   = Design::with(['user', 'label', 'project'])->orderBy('created_at', 'DESC')->get()->toArray();
+        $data['projects']   = Projects::select(['id', 'name', 'permalink'])->where('type', '=', 'design')->get()->toArray();
+        $data['templates']  = Template::with(['labels'])->where('isActive', '=', 1)->get()->toArray();
+        $data['lables']     = Label::where('isActive', '=', 1)->get()->toArray();
+        
+        return view("admin.project.design", $data);
+    }
 
     public function list() {
         $this->bredcrum['title'] = "Project Existing";
@@ -248,6 +261,60 @@ class ProjectController extends Controller
                     $this->status = [
                         "code" => 200,
                         "msg" => GlobalFunction::flash_message('success', 'update', 'wallaper')
+                    ];
+                }
+            } catch (QueryException $exception) {
+                $errorInfo = $exception->errorInfo;
+                $this->status = [
+                    "code" => 500,
+                    "msg" => $errorInfo
+                ];
+            }
+        }
+
+        return json_encode($this->status);
+    }
+
+    public function post_design(Request $request) {
+        $data['projectName']    = $request['projectName'];
+        $data['templatesName']  = $request['templatesName'];
+        $data['isActive']       = $request['isActive'];
+        $data['labelId']        = $request['labelId'];
+        $data['images']         = $request['images'];
+        $data['imagesId']       = $request['imagesId'];
+        $data['edited']         = $request['edited'];
+        
+        $query = [
+            'project_id' => $data['projectName'],
+            'label_id' => $data['labelId'],
+            'based_64' => $data['images'],
+            'user_id' => Auth::user()->id,
+        ];
+        
+        if($data['edited'] == 'false') { // input data
+            try {
+                $design = Design::create($query);
+                $this->status = [
+                    "code" => 200,
+                    "msg" => GlobalFunction::flash_message('success', 'tambah', 'design')
+                ];
+            } catch (QueryException $exception) {
+                $errorInfo = $exception->errorInfo;
+                $this->status = [
+                    "code" => 500,
+                    "msg" => $errorInfo
+                ];
+            }
+            
+        } else {
+            try {
+                $design = Design::find($data['imagesId']);
+                // dd($data);
+                if($design) {
+                    $design->update($query);
+                    $this->status = [
+                        "code" => 200,
+                        "msg" => GlobalFunction::flash_message('success', 'update', 'design')
                     ];
                 }
             } catch (QueryException $exception) {
