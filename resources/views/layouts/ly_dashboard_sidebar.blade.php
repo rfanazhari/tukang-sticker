@@ -100,8 +100,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview @if(in_array(Route::current()->getName(), ['template', 'wallpaper', 'list', 'project_add'])) menu-open @endif">
-                    <a href="#" class="nav-link @if(in_array(Route::current()->getName(), ['template', 'wallpaper', 'list', 'project_add'])) active @endif">
+                <li class="nav-item has-treeview @if(in_array(Route::current()->getName(), ['template', 'wallpaper', 'list', 'project_add', 'design'])) menu-open @endif">
+                    <a href="#" class="nav-link @if(in_array(Route::current()->getName(), ['template', 'wallpaper', 'list', 'project_add', 'design'])) active @endif">
                       <i class="nav-icon fas fa-project-diagram"></i>
                         <p>
                           Projects
@@ -128,7 +128,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('gallery') }}" class="nav-link @if(Route::current()->getName() == 'gallery') active @endif">
+                            <a href="{{ route('design') }}" class="nav-link @if(Route::current()->getName() == 'design') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Design</p>
                             </a>
