@@ -26,7 +26,7 @@ Route::group([ 'prefix' => 'web'], function() {
 
 Route::group([ 'prefix' => 'order'], function() {
     Route::get('/', 'OrderController@index')->name('home_order');
-    Route::get('/create', 'OrderController@createOrder')->name('create_order');
+    Route::get('/create/{type}', 'OrderController@createOrder')->name('create_order');
     Route::get('/login', 'OrderController@index')->name('login_order');
 });
 

@@ -1,6 +1,9 @@
 @extends('layouts.ly_order')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+
   <style>
     .form-control {
       background-color: unset;
@@ -37,12 +40,28 @@
                   <!-- /.card-header -->
                   <div id="accordion-collapse-2-3" class="collapse show" aria-labelledby="accordion-heading-2-3" data-target="#accordion-2">
                      <div class="card-body">
+                       @if($type == 'wallpaper' || $type == 'design')
+                        <div class="row" id="select-product">
+                          <div class="col-md-6">
+                            <div class="card card-body">
+                              <button class="btn btn-blue" type="button" onclick="selectTemplate()">Our Template</button>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="card card-body">
+                              <button class="btn btn-yellow" type="button" onclick="uploadTemplate()">Upload Template</button>
+                            </div>
+                          </div>
+                        </div>
+                       @else
                         <button class="btn btn-s" type="button" onclick="addProduct('add', '')"><i class="jam jam-plus-rectangle"></i> Product</button>
-                        <input type="hidden" name="product_list">                        
-                      <div class="space30"></div>
+                        <input type="hidden" name="product_list">
+                        <div class="space30"></div>
                       <div id="list-product">
                           <p>Add your product..</p>
                       </div>
+                        @endif                   
+                      
                       <button class="btn btn-s" id="next-product" type="button" onclick="nexts('product')">Next <i class="jam jam-chevrons-right"></i></button>
                       <div class="space30"></div>
                      </div>
@@ -151,7 +170,119 @@
 @endsection
 
 @section('js')
+<script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootbox/bootbox.min.js') }}"></script>
+<script>
+  function selectPatternImg(state) {
+    if (!state.id) {
+        return state.text;
+    }
+    
+    var baseUrl = "/user/pages/images/flags";
+    var img     = state.element.attributes["data-id"].textContent;
+    
+    var $state = $(
+        '<span><img src="'+ img + '" class="img-flag" style="width: 25%" /> ' + state.text + '</span>'
+    );
+    return $state;
+    };
+  function selectTemplate() {
+    var dialog = bootbox.dialog({
+        closeButton: false,
+        size: 'large',
+        message: '<form class="form-commentar" id="form-commentar">' +
+                '<div class="form-group has-float-label">' +
+                    '<select class="custom-select select-pattern" id="pattern" name="pattern">' +
+                        '<option value="">Pilih Product</option>' +
+                        @foreach($pattern as $key => $val)
+                        '<option value="{{ $val['id'] }}" data-id="{{ $val['imgHeader'] }}">{{ $val['labels']['name'] }}</option>' +
+                        @endforeach
+                    '</select>' +
+                '</div>' +
+                '<div class="form-group has-float-label">' +
+                    '<label for="satuanDimensi">Satuan Dimensi</label>' +
+                    '<input type="text" class="form-control" id="satuanDimensi" name="satuan_dimensi" placeholder="like cm, m...">' +
+                '</div>' +
+                '<div class="form-group has-float-label">' +
+                    '<label for="dimensi">Dimensi</label>' +
+                    '<input type="text" class="form-control" id="dimensi" name="dimensi" placeholder="like 10x10...">' +
+                '</div>' +
+                '<div class="form-group has-float-label">' +
+                    '<label for="satuanQty">Satuan Quantity</label>' +
+                    '<input type="text" class="form-control" id="satuanQty" name="satuan_qty" placeholder="like pcs, pack...">' +
+                '</div>' +
+                '<div class="form-group has-float-label">' +
+                    '<label for="qty">Quantity</label>' +
+                    '<input type="text" class="form-control" id="qty" name="qty" placeholder="" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;">' +
+                '</div>' +
+                
+                '<div class="form-group">' + '<button  class="btn btn-block btn-success simpanProduct">Add Product</button>' +'</div>' +
+            '</form>',
+        onEscape: function() {
+            
+        },
+    });
+                        
+    dialog.init(function() {
+
+      $('.select-pattern').select2({
+        theme: 'bootstrap4',
+        templateResult: selectPatternImg
+      });
+
+        $('#products').on('change', function() {
+            if(this.value == "" || this.value == undefined) {
+                $('#products').addClass("is-invalid");
+            } else {
+                $('#products').removeClass("is-invalid");
+            }
+        });
+        
+        $('.simpanProduct').on('click', function(e) {
+            e.preventDefault();
+            
+            let products = $('[name="products"]').val();
+            let productsName = $('[name="products"] option:selected').text();
+            let satuan_dimensi = $('[name="satuan_dimensi"]').val();
+            let dimensi = $('[name="dimensi"]').val();
+            let satuan_qty = $('[name="satuan_qty"]').val();
+            let qty = $('[name="qty"]').val();
+            let cost_price = $('[name="cost_price_product"]').val();
+            let selling_price = $('[name="selling_price_product"]').val();
+            
+            if(products == '') {
+                $('#products').addClass("is-invalid");
+            } else if(satuan_dimensi == '') {
+                $('#satuanDimensi').addClass("is-invalid");
+            } else if(dimensi == '') {
+                $('#dimensi').addClass("is-invalid");
+            } else if(satuan_qty == '') {
+                $('#satuanQty').addClass("is-invalid");
+            } else if(qty == '') {
+                $('#qty').addClass("is-invalid");
+            } else {
+                let tmpData = {
+                    'products' : products,
+                    'productsName' : productsName,
+                    'satuan_dimensi' : satuan_dimensi,
+                    'dimensi' : dimensi,
+                    'satuan_qty' : satuan_qty,
+                    'qty' : qty,
+                    'cost_price' : cost_price,
+                    'selling_price' : selling_price
+                };
+                listProduct.push(tmpData);
+                filterData(products, listProduct);
+                generateTable(globalObj, 'add');
+                // generateTable(listProduct, 'add');
+            }
+        });
+    });
+  }
+  function uploadTemplate() {
+    alert('asdfsd');
+  }
+</script>
 <script>
   var globalObj = [];
   function nexts(type) {

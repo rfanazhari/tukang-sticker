@@ -1,5 +1,16 @@
 @extends('layouts.ly_order')
 
+@section('css')
+    <style>
+       .bootbox-radiobutton-list {
+          display: inline-flex;
+       }
+       .form-check {
+          margin: 10%;
+       }
+    </style>
+@endsection
+
 @section('content')
 
 <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="{{ asset('front/images/product/landscape/5.jpg') }}">
@@ -18,7 +29,7 @@
           <div class="col-lg-6 mb-0">
              <ul class="nav nav-tabs nav-tabs-bg flex-column">
                 <li class="nav-item">
-                   <a class="nav-link d-flex flex-row active" href="{{ route('create_order') }}">
+                   <a class="nav-link d-flex flex-row active" href="javascript:;" onclick="selectOrder()">
                       <div class="icon icon-svg mr-25"><img src="{{ asset('front/images/icons/ms-shopping-cart.png') }}" alt=""></div>
                       <div>
                          <span>Create Your Order</span>
@@ -52,4 +63,33 @@
     <!-- /.container -->
 </div> 
 
+@endsection
+
+@section('js')
+<script src="{{ asset('assets/plugins/bootbox/bootbox.min.js') }}"></script>
+    <script>
+       function selectOrder() {
+         bootbox.prompt({
+            closeButton: false,
+            title: "Please select project you want.",
+            inputType: 'radio',
+            inputOptions: [
+            {
+               text: 'Wallpaper',
+               value: 'wallpaper',
+            },
+            {
+               text: 'Design',
+               value: 'design',
+            },
+            ],
+            callback: function (result) {
+               if(result != null) {
+                  var url = "{{ url('order/create') }}/"+result;
+                  location.href = url;
+               }
+            }
+         });
+       }
+    </script>
 @endsection

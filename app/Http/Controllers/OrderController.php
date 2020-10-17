@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ContactUs;
 use App\Models\Product;
+use App\Models\Template;
 
 class OrderController extends Controller
 {
@@ -81,6 +82,11 @@ class OrderController extends Controller
         $data['cat_service']    = $this->cat_service;
         $data['contact']        = $this->footer;
         $data['products']       = Product::get()->toArray();
+        $data['pattern']        = Template::with(['labels'])->where('isActive', '=', 1)->get()->toArray();
+
+        $data['type']           = $request['type'];
+
+        // dd($data);
 
         return view('front.order.order_form', $data);
     }
