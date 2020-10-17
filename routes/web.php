@@ -14,7 +14,7 @@
 Route::get('/', 'FrontController@index')->name('front');
 Route::get('/sitemap', 'FrontController@sitemap')->name('sitemap');
 
-Route::group([ 'prefix' => 'front'], function() {
+Route::group([ 'prefix' => 'web'], function() {
     Route::get('/career', 'FrontController@career')->name('career_front');
     Route::get('/service', 'FrontController@service')->name('service_front');
     Route::get('/client', 'FrontController@client')->name('client_front');
@@ -84,6 +84,11 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth'] ], function() {
     
     Route::get('/project/wallpaper', 'ProjectController@wallpaper')->name('wallpaper');
     Route::post('/project/wallpaper/post', 'ProjectController@post_wallpaper')->name('wallpaper_post');
+});
+
+Route::group(['prefix' => 'projects'], function() {
+    Route::get('/wallpapers', 'OurProjectController@wallpaper')->name('front_wallpaper');
+    Route::get('/designs', 'OurProjectController@design')->name('front_design');
 });
 
 
