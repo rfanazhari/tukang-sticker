@@ -100,6 +100,41 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item has-treeview @if(in_array(Route::current()->getName(), ['template', 'wallpaper', 'list', 'project_add'])) menu-open @endif">
+                    <a href="#" class="nav-link @if(in_array(Route::current()->getName(), ['template', 'wallpaper', 'list', 'project_add'])) active @endif">
+                      <i class="nav-icon fas fa-project-diagram"></i>
+                        <p>
+                          Projects
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('list') }}" class="nav-link @if(in_array(Route::current()->getName(), ['list', 'project_add'])) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List Project</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('template') }}" class="nav-link @if(Route::current()->getName() == 'template') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Template Wallpaper</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('wallpaper') }}" class="nav-link @if(Route::current()->getName() == 'wallpaper') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Wallpaper</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('gallery') }}" class="nav-link @if(Route::current()->getName() == 'gallery') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Design</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('slider') }}" class="nav-link @if(Route::current()->getName() == 'slider') active @endif">
                     <i class="nav-icon fas fa-sliders-h"></i>

@@ -18,6 +18,7 @@ class CreateTemplatesTable extends Migration
             $table->unsignedBigInteger('label_id');
             $table->longText('imgHeader');
             $table->unsignedBigInteger('user_id');
+            $table->tinyInteger('isActive')->default(1); // 0 => non active, 1 => active
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

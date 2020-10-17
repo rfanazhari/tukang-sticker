@@ -73,6 +73,17 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth'] ], function() {
     Route::get('/order/transaction/create/{type}', 'TransactionController@create')->name('transaction_create');
     Route::post('/order/transaction/post/{type}', 'TransactionController@post')->name('transaction_post');
     Route::post('/order/transaction/show-details', 'TransactionController@details')->name('transaction_details');
+
+    Route::get('/project/list', 'ProjectController@list')->name('list');
+    Route::get('/project/project-add', 'ProjectController@project_add')->name('project_add');
+    Route::post('/project/project-post', 'ProjectController@project_add_post')->name('project_post');
+
+    Route::get('/project/template', 'ProjectController@template')->name('template');
+    Route::get('/project/template/{label}', 'ProjectController@filter_template')->name('template_filter');
+    Route::post('/project/template/post', 'ProjectController@post_template')->name('template_post');
+    
+    Route::get('/project/wallpaper', 'ProjectController@wallpaper')->name('wallpaper');
+    Route::post('/project/wallpaper/post', 'ProjectController@post_wallpaper')->name('wallpaper_post');
 });
 
 

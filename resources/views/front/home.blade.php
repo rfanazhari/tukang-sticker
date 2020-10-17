@@ -34,6 +34,43 @@
             <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg></div>
       </div>
    </div>
+
+   <div class="wrapper white-wrapper">
+    <div class="container p-80">
+        <div class="text-center">
+            <button type="submit" class="btn btn-focus btn-blue">Grab what you want here <i class="jam jam-arrow-circle-right"></i></button>
+        </div>
+        <div class="space10"></div>
+        <h3 class="display-3 text-center">Check out some of our awesome projects <br class="d-none d-lg-block" />with creative ideas and great design.</h3>
+        <div class="space40"></div>
+        <div class="grid grid-view">
+          <div class="tiles text-center light-gallery-wrapper">
+            <div class="row isotope">
+              <div class="item item-detailed grid-sizer col-md-12 col-lg-6">
+                <figure class="overlay overlay2 rounded mb-20"><a href="{{ asset('front/images/art/fp12.jpg') }}" class="lightbox"> <img src="{{ asset('front/images/art/fp12.jpg') }}" alt="" /></a></figure>
+                <div class="post-content">
+                  <h2 class="post-title mb-10"><a href="portfolio-post4.html" class="btn text-white btn-red">Wallpaper <i class="jam jam-arrow-square-right"></i></a></h2>
+                </div>
+                <!-- /.post-content -->
+              </div>
+              <!-- /.item -->
+              <div class="item item-detailed grid-sizer col-md-12 col-lg-6">
+                <figure class="overlay overlay2 rounded mb-20"><a href="{{ asset('front/images/art/fp15.jpg') }}" class="lightbox"> <img src="{{ asset('front/images/art/fp15.jpg') }}" alt="" /></a></figure>
+                <div class="post-content">
+                  <h2 class="post-title mb-10"><a href="portfolio-post5.html" class="btn text-white btn-red">Design <i class="jam jam-arrow-square-right"></i></a></h2>
+                </div>
+                <!-- /.post-content -->
+              </div>
+              <!-- /.item -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.tiles -->
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
+
    <!-- /.container-fluid -->
    <div class="container inner">
       <div class="row align-items-center">
@@ -228,8 +265,5 @@
     </div>
     <!-- /.container -->
 </div>
-
-
-
 
 @endsection

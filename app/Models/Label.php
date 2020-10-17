@@ -15,6 +15,16 @@ class Label extends Model
         return $this->hasMany('App\Models\Gallery', 'id');
     }
 
+    public function template()
+    {
+        return $this->hasMany('App\Models\Template', 'id');
+    }
+
+    public function project()
+    {
+        return $this->hasMany('App\Models\Project', 'id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

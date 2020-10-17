@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->longText('imgHeader');
             $table->text('description');
+            $table->string('permalink');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

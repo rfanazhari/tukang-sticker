@@ -82,4 +82,13 @@ class User extends Authenticatable
         return $this->hasMany(Transaction::class, 'created_by');
     }
 
+    public function template()
+    {
+        return $this->hasMany(Template::class);
+    }
+
+    public function wallpaper()
+    {
+        return $this->hasMany(Wallpaper::class, 'user_id');
+    }
 }

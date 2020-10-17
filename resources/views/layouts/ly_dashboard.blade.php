@@ -72,41 +72,9 @@
 <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootbox/bootbox.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/parsley/parsley.min.js') }}"></script>
+<script src="{{ asset('js/globalJs.js') }}"></script>
 <script>
-function onlyAlert(msg, closes) {
-    bootbox.alert(msg);
-    if(closes) {
-        bootbox.hideAll();
-    }
-}
 
-function getFormattedDate(date) {
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear().toString().slice(2);
-    return day + '-' + month + '-' + year;
-}
-
-function postAjax(url, data, success) {
-    var params = typeof data == 'string' ? data : Object.keys(data).map(
-            function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
-        ).join('&');
-
-    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-    xhr.open('POST', url);
-    xhr.onreadystatechange = function() {
-        // if (xhr.readyState>3 && xhr.status==200) {
-        //   success({ status: xhr.status,  response: xhr.responseText}); 
-        // }
-        if(xhr.readyState>3) {
-          success({ status: xhr.status,  response: xhr.responseText}); 
-        }
-    };
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send(params);
-    return xhr;
-}
 
 </script>
 @yield('javascript')
