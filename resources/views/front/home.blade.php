@@ -38,7 +38,7 @@
    <div class="wrapper white-wrapper">
     <div class="container p-80">
         <div class="text-center">
-            <button type="submit" class="btn btn-focus btn-blue">Grab what you want here <i class="jam jam-arrow-circle-right"></i></button>
+            <button type="button" class="btn btn-focus btn-blue" onclick="location.href='{{ route('home_order') }}'">Grab what you want here <i class="jam jam-arrow-circle-right"></i></button>
         </div>
         <div class="space10"></div>
         <h3 class="display-3 text-center">Check out some of our awesome projects <br class="d-none d-lg-block" />with creative ideas and great design.</h3>
@@ -49,7 +49,7 @@
               <div class="item item-detailed grid-sizer col-md-12 col-lg-6">
                 <figure class="overlay overlay2 rounded mb-20"><a href="{{ asset('front/images/art/fp12.jpg') }}" class="lightbox"> <img src="{{ asset('front/images/art/fp12.jpg') }}" alt="" /></a></figure>
                 <div class="post-content">
-                  <h2 class="post-title mb-10"><a href="portfolio-post4.html" class="btn text-white btn-red">Wallpaper <i class="jam jam-arrow-square-right"></i></a></h2>
+                  <h2 class="post-title mb-10"><a href="{{ route('front_wallpaper') }}" class="btn text-white btn-red">Wallpaper <i class="jam jam-arrow-square-right"></i></a></h2>
                 </div>
                 <!-- /.post-content -->
               </div>
@@ -57,7 +57,7 @@
               <div class="item item-detailed grid-sizer col-md-12 col-lg-6">
                 <figure class="overlay overlay2 rounded mb-20"><a href="{{ asset('front/images/art/fp15.jpg') }}" class="lightbox"> <img src="{{ asset('front/images/art/fp15.jpg') }}" alt="" /></a></figure>
                 <div class="post-content">
-                  <h2 class="post-title mb-10"><a href="portfolio-post5.html" class="btn text-white btn-red">Design <i class="jam jam-arrow-square-right"></i></a></h2>
+                  <h2 class="post-title mb-10"><a href="{{ route('front_design') }}" class="btn text-white btn-red">Design <i class="jam jam-arrow-square-right"></i></a></h2>
                 </div>
                 <!-- /.post-content -->
               </div>
